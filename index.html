@@ -34,7 +34,6 @@
 --glass-blur: blur(16px);
 }
 [data-theme="light"]{--bg:#f5ead8;--bg2:#e8d5b7;--bg3:#d5c4a0;--text:#1a0800;--dim:#5a3a1a;--glass-bg:rgba(255,245,230,0.6);--glass-border:rgba(139,105,20,0.25);}
-
 /* 🏗 BLUEPRINT MODE OVERRIDES */
 body.blueprint-mode {
   --bg: #02121a !important;
@@ -58,25 +57,20 @@ body.blueprint-mode .h-name, body.blueprint-mode .sec-h, body.blueprint-mode .na
   font-family: 'Fira Code', monospace !important;
   letter-spacing: 0.05em !important;
 }
-
 html{scroll-behavior:smooth;font-size:16px;}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;cursor:none;transition:background 0.5s ease, color 0.5s ease;}
 img{max-width:100%;display:block;}
 a{color:inherit;text-decoration:none;}
-
 /* ═══ CURSOR ═══ */
 #cur{position:fixed;width:10px;height:10px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform .15s ease, background-color 0.3s ease;}
 #cur-ring{position:fixed;width:38px;height:38px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .35s ease;opacity:.5;}
 body:not(.has-mouse) #cur,body:not(.has-mouse) #cur-ring{display:none;}
-
 /* ═══ SCROLL BAR ═══ */
 ::-webkit-scrollbar{width:4px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
 ::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:2px;}
-
 /* ═══ PROGRESS ═══ */
 #prog{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold-dark),var(--gold),var(--gold-light));z-index:9999;transition:width .1s linear;box-shadow:0 0 10px var(--gold);}
-
 /* ═══ LOADER ═══ */
 #loader{position:fixed;inset:0;background:var(--bg);z-index:100000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;transition:opacity .8s ease,visibility .8s ease;overflow:hidden;}
 #loader.out{opacity:0;visibility:hidden;}
@@ -88,16 +82,13 @@ body:not(.has-mouse) #cur,body:not(.has-mouse) #cur-ring{display:none;}
 .ld-bar{width:240px;height:2px;background:rgba(201,168,76,.15);overflow:hidden;position:relative;border-radius:2px;}
 .ld-bar::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,var(--gold),var(--gold-light));animation:loadrun 2.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;}
 .ld-sub{font-size:.7rem;letter-spacing:.4em;color:var(--dim);text-transform:uppercase;}
-
 /* 🛰 SATELLITE ARRIVAL OVERLAY */
 #sat-arrival{position:fixed;inset:0;background:#000;z-index:99999;display:none;align-items:center;justify-content:center;flex-direction:column;color:var(--gold);font-family:'Cormorant Garamond',serif;pointer-events:none;opacity:0;transition:opacity 0.8s ease;}
 #sat-arrival.active{display:flex;opacity:1;pointer-events:all;}
 .sat-stage{font-size: clamp(1.8rem, 4vw, 3.5rem); letter-spacing: 0.3em; text-transform: uppercase; animation: zoomPulse 1.2s ease-in-out infinite alternate; text-shadow: 0 0 30px var(--gold);}
 .sat-sub{font-size: 0.8rem; letter-spacing: 0.5em; color: var(--dim); margin-top: 1rem; text-transform: uppercase;}
-
 /* ═══ CANVAS ═══ */
 #pcv{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.6;}
-
 /* 💎 CRYSTAL NAVIGATION */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 4%;display:flex;align-items:center;justify-content:space-between;transition:var(--tr);}
 nav.scrolled{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webkit-backdrop-filter:var(--glass-blur);border-bottom:1px solid var(--glass-border);padding:.8rem 4%;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
@@ -111,21 +102,18 @@ nav.scrolled{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webki
 .crystal-btn:hover{background:var(--gold);color:var(--bg);box-shadow:0 0 20px var(--gold);}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--gold);transition:var(--tr);}
-
 /* Mobile nav */
 .mob-menu{position:fixed;inset:0;background:rgba(8,3,0,.97);z-index:999;display:none;flex-direction:column;align-items:center;justify-content:center;gap:2.5rem;backdrop-filter:blur(20px);}
 .mob-menu.open{display:flex;}
 .mob-menu a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--dim);letter-spacing:.05em;transition:color .3s;}
 .mob-menu a:hover{color:var(--gold);}
 .mob-x{position:absolute;top:2rem;right:2rem;font-size:1.8rem;color:var(--gold);cursor:pointer;background:none;border:none;line-height:1;}
-
 /* 🌍 PLANET NAVIGATION BAR */
 .planet-bar-wrap{position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);z-index:900;display:flex;flex-direction:column;gap:1.2rem;align-items:center;}
 .planet-node{width:14px;height:14px;border-radius:50%;border:1px solid var(--gold);background:rgba(13,5,0,0.8);cursor:pointer;position:relative;transition:all 0.4s ease;}
 .planet-node::after{content:attr(data-label);position:absolute;right:25px;top:50%;transform:translateY(-50%);font-size:0.65rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);background:var(--glass-bg);padding:0.2rem 0.6rem;border-radius:4px;border:1px solid var(--glass-border);opacity:0;pointer-events:none;white-space:nowrap;transition:all 0.3s ease;}
 .planet-node:hover::after,.planet-node.active::after{opacity:1;right:22px;}
 .planet-node.active{background:var(--gold);box-shadow:0 0 15px var(--gold);transform:scale(1.3);}
-
 /* ━━━ HERO ━━━ */
 #hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;}
 .hero-sky{position:absolute;inset:0;
@@ -138,7 +126,6 @@ nav.scrolled{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webki
 .hc{position:absolute;border-radius:100px;background:radial-gradient(ellipse,rgba(255,255,255,.06) 0%,transparent 70%);animation:cldmv linear infinite;}
 .hero-bg-word{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Dancing Script',cursive;font-size:clamp(5rem,18vw,22rem);color:rgba(201,168,76,.03);white-space:nowrap;pointer-events:none;z-index:1;user-select:none;}
 .hero-inner{position:relative;z-index:10;max-width:1400px;width:100%;margin:0 auto;padding:7rem 5% 4rem;display:grid;grid-template-columns:1fr 340px;gap:5rem;align-items:center;}
-
 .h-eyebrow{font-size:.68rem;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);margin-bottom:1.8rem;display:flex;align-items:center;gap:1rem;opacity:0;animation:fadeup 1s ease .5s forwards;}
 .h-eyebrow::before{content:'';display:inline-block;width:36px;height:1px;background:var(--gold);}
 .h-name{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,8vw,8rem);font-weight:700;line-height:.93;margin-bottom:1.5rem;opacity:0;animation:fadeup 1s ease .7s forwards;}
@@ -150,19 +137,16 @@ nav.scrolled{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webki
 .h-typing{font-family:'Playfair Display',serif;font-size:clamp(1rem,2.5vw,1.5rem);font-style:italic;color:var(--dim);min-height:2rem;margin-bottom:2.5rem;opacity:0;animation:fadeup 1s ease 1.1s forwards;}
 .typing-cur{display:inline-block;width:2px;height:1.1em;background:var(--gold);vertical-align:middle;animation:blink 1s step-end infinite;}
 .h-ctas{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeup 1s ease 1.3s forwards;}
-
 .btn-g{font-family:'Inter',sans-serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--bg);background:linear-gradient(135deg,var(--gold-light),var(--gold),var(--gold-dark));border:none;padding:.9rem 2rem;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:var(--tr);position:relative;overflow:hidden;border-radius:4px;}
 .btn-g::before{content:'';position:absolute;inset:0;background:rgba(255,255,255,.2);opacity:0;transition:opacity .3s;}
 .btn-g:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,168,76,.4);}
 .btn-g:hover::before{opacity:1;}
 .btn-o{font-family:'Inter',sans-serif;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);background:transparent;border:1px solid rgba(201,168,76,.4);padding:.9rem 2rem;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:var(--tr);border-radius:4px;backdrop-filter:blur(6px);}
 .btn-o:hover{border-color:var(--gold);background:rgba(201,168,76,.1);transform:translateY(-2px);box-shadow:0 8px 25px rgba(201,168,76,0.15);}
-
 .h-socials{display:flex;gap:1rem;margin-top:2.2rem;opacity:0;animation:fadeup 1s ease 1.5s forwards;}
 .h-soc{width:38px;height:38px;border:1px solid rgba(201,168,76,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:.9rem;transition:var(--tr);}
 .h-soc:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.1);transform:translateY(-3px);box-shadow:0 6px 20px rgba(201,168,76,.2);}
 .h-soc svg{width:15px;height:15px;fill:currentColor;}
-
 .h-frame-wrap{position:relative;display:flex;align-items:center;justify-content:center;opacity:0;animation:fadeup 1.2s ease 1s forwards;}
 .h-frame{position:relative;width:280px;height:360px;}
 .h-frame-border{position:absolute;inset:0;border:2px solid var(--gold);background:rgba(0,0,0,.55);backdrop-filter:blur(10px);box-shadow:0 0 0 8px rgba(201,168,76,.06),0 0 0 9px rgba(201,168,76,.35),0 0 60px rgba(201,168,76,.25),inset 0 0 30px rgba(201,168,76,.04);}
@@ -173,13 +157,12 @@ nav.scrolled{background:var(--glass-bg);backdrop-filter:var(--glass-blur);-webki
 .h-corner.br{bottom:-5px;right:-5px;border-width:0 2px 2px 0;}
 .h-frame-inner{position:absolute;inset:14px;display:flex;align-items:center;justify-content:center;overflow:hidden;}
 .h-avatar{width:100%;height:100%;background:linear-gradient(135deg,#160800,#2a1506);display:flex;align-items:center;justify-content:center;position:relative;}
+.h-avatar img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;z-index:3;}
 .h-initials{font-family:'Cormorant Garamond',serif;font-size:5rem;font-weight:700;color:var(--gold);font-style:italic;text-shadow:0 0 40px rgba(201,168,76,.5);position:relative;z-index:2;}
 .h-avatar::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,168,76,.1) 0%,transparent 70%);animation:aura 3s ease infinite;}
 .h-glow{position:absolute;inset:-20px;background:radial-gradient(ellipse,rgba(201,168,76,.12) 0%,transparent 70%);animation:framepulse 3s ease infinite;pointer-events:none;}
-
 .scroll-ind{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--dim);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;animation:scrollbounce 2s ease infinite;z-index:10;}
 .scroll-line{width:1px;height:44px;background:linear-gradient(180deg,var(--gold),transparent);}
-
 /* ═══ SECTIONS COMMON ═══ */
 section{position:relative;z-index:1;}
 .sec-pad{padding:8rem 5%;}
@@ -193,7 +176,6 @@ section{position:relative;z-index:1;}
 .orn{display:flex;align-items:center;gap:1.5rem;margin:2.5rem 0;}
 .orn::before,.orn::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
 .orn span{color:var(--gold);font-size:1rem;}
-
 /* 🌊 LIQUID GLASS CARDS UPGRADE */
 .liquid-glass-card{
   background: var(--glass-bg);
@@ -222,7 +204,6 @@ section{position:relative;z-index:1;}
   border-color: rgba(201,168,76,0.45);
   box-shadow: 0 22px 45px rgba(0,0,0,0.5), 0 0 25px rgba(201,168,76,0.15);
 }
-
 /* ━━━ ABOUT ━━━ */
 #about{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 100%);}
 .about-g{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
@@ -237,7 +218,6 @@ section{position:relative;z-index:1;}
 .stat-c{background:rgba(201,168,76,.06);border:1px solid rgba(201,168,76,.15);padding:1.5rem;text-align:center;border-radius:6px;}
 .stat-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1;}
 .stat-l{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-top:.4rem;}
-
 /* Timeline */
 .tl{position:relative;padding-left:1.8rem;}
 .tl::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:linear-gradient(180deg,transparent,var(--gold),transparent);}
@@ -246,13 +226,11 @@ section{position:relative;z-index:1;}
 .tl-yr{font-size:.68rem;letter-spacing:.2em;color:var(--gold);margin-bottom:.25rem;}
 .tl-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text);margin-bottom:.3rem;}
 .tl-desc{font-size:.85rem;color:var(--dim);line-height:1.7;}
-
 /* 🧬 DIGITAL DNA & 3D SKILL STRAND */
 #digital-dna{margin-top:4rem;padding:2.5rem;text-align:center;}
 .dna-title{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);margin-bottom:0.5rem;}
 .dna-subtitle{font-size:0.8rem;letter-spacing:0.2em;color:var(--dim);text-transform:uppercase;margin-bottom:2rem;}
 #dna-canvas{width:100%;height:260px;display:block;}
-
 /* ━━━ SKILLS ━━━ */
 #skills{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);}
 .skills-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;margin-top:3rem;}
@@ -265,23 +243,19 @@ section{position:relative;z-index:1;}
 .sk-bar{width:110px;height:2px;background:rgba(255,255,255,.07);border-radius:2px;overflow:hidden;}
 .sk-fill{height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold));width:0;transition:width 1.5s cubic-bezier(.25,.46,.45,.94);box-shadow:0 0 6px rgba(201,168,76,.5);}
 .sk-fill.anim{width:var(--w);}
-
 .tech-wall{display:flex;flex-wrap:wrap;gap:1.2rem;justify-content:center;margin-top:3.5rem;}
 .tech-c{width:86px;height:86px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:8px;backdrop-filter:var(--glass-blur);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;transition:var(--tr);}
 .tech-c:hover{border-color:rgba(201,168,76,.45);background:rgba(201,168,76,.07);transform:translateY(-5px) scale(1.05);box-shadow:0 15px 35px rgba(0,0,0,.3);}
 .tech-c .ic{font-size:1.7rem;animation:tfloat 3s ease infinite;}
 .tech-c .lb{font-size:.58rem;letter-spacing:.1em;color:var(--dim);}
-
 /* 💠 AI SKILL SCANNER LIGHT */
 #skill-scanner-line{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),#fff,var(--gold),transparent);box-shadow:0 0 15px var(--gold);z-index:10;pointer-events:none;display:none;animation:scanSweep 3s ease-in-out infinite alternate;}
-
 /* ━━━ PROJECTS ━━━ */
 #projects{background:var(--bg2);}
 .filt{display:flex;gap:.7rem;flex-wrap:wrap;margin:2rem 0 2.8rem;}
 .f-btn{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);background:transparent;border:1px solid rgba(201,168,76,.18);padding:.45rem 1.3rem;cursor:pointer;transition:var(--tr);border-radius:4px;}
 .f-btn.on,.f-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.07);}
 .proj-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.8rem;}
-
 .pc{position:relative;}
 .pc-prev{height:190px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:6px 6px 0 0;}
 .pc-prev-icon{font-size:3.5rem;position:relative;z-index:2;transition:transform .4s ease;}
@@ -300,7 +274,6 @@ section{position:relative;z-index:1;}
 .p-btn:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,168,76,.07);}
 .p-btn.pri{background:linear-gradient(135deg,var(--gold-dark),var(--gold));border-color:transparent;color:var(--bg);}
 .p-btn.pri:hover{box-shadow:0 4px 20px rgba(201,168,76,.4);}
-
 /* ⚡ PROJECT POWER METERS */
 .proj-power-meter{margin-top:1.2rem;padding-top:1rem;border-top:1px solid rgba(201,168,76,0.12);display:grid;grid-template-columns:1fr 1fr;gap:0.6rem 1rem;}
 .pm-item{display:flex;flex-direction:column;gap:0.25rem;}
@@ -308,7 +281,6 @@ section{position:relative;z-index:1;}
 .pm-label span{color:var(--gold);}
 .pm-bar-wrap{height:3px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden;}
 .pm-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-dark),var(--gold));border-radius:2px;width:0;transition:width 1.2s ease;}
-
 /* ━━━ EXPERIENCE & EDUCATION ━━━ */
 #experience{background:var(--bg);}
 .exp-g{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3.5rem;}
@@ -319,7 +291,6 @@ section{position:relative;z-index:1;}
 .exp-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--text);margin-bottom:.3rem;}
 .exp-org{font-size:.82rem;color:var(--gold);margin-bottom:.7rem;}
 .exp-desc{font-size:.83rem;color:var(--dim);line-height:1.7;}
-
 /* 🏆 HALL OF ACHIEVEMENTS / CERTIFICATIONS ━━━ */
 #certifications{background:var(--bg2);position:relative;}
 .hall-glass-floor{position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(180deg,transparent,rgba(201,168,76,0.04));pointer-events:none;}
@@ -329,7 +300,6 @@ section{position:relative;z-index:1;}
 .cert-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--text);margin-bottom:.3rem;line-height:1.4;}
 .cert-iss{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
 .cert-badge{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(201,168,76,.12);color:var(--gold);padding:.2rem .6rem;border:1px solid rgba(201,168,76,.25);margin-top:.5rem;display:inline-block;border-radius:3px;}
-
 /* ━━━ GITHUB ━━━ */
 #github{background:var(--bg);}
 .gh-profile{display:flex;gap:2.5rem;align-items:center;padding:2.5rem;margin-bottom:2.5rem;flex-wrap:wrap;}
@@ -342,7 +312,6 @@ section{position:relative;z-index:1;}
 .gh-stat .l{font-size:.65rem;color:var(--dim);letter-spacing:.1em;}
 .gh-link{display:inline-flex;align-items:center;gap:.5rem;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.28);padding:.7rem 1.6rem;transition:var(--tr);flex-shrink:0;border-radius:4px;}
 .gh-link:hover{background:rgba(201,168,76,.09);border-color:var(--gold);}
-
 .gh-heatmap-wrap{padding:2rem;margin-bottom:2rem;}
 .gh-hm-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gold);margin-bottom:1.2rem;}
 .hm{display:grid;grid-template-columns:repeat(52,1fr);gap:3px;}
@@ -353,14 +322,12 @@ section{position:relative;z-index:1;}
 .hm-2{background:rgba(201,168,76,.42);}
 .hm-3{background:rgba(201,168,76,.7);}
 .hm-4{background:var(--gold);}
-
 .repo-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.3rem;}
 .repo-c{padding:1.6rem;}
 .repo-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:var(--gold);margin-bottom:.4rem;}
 .repo-desc{font-size:.8rem;color:var(--dim);line-height:1.6;margin-bottom:.9rem;}
 .repo-meta{display:flex;gap:1.2rem;font-size:.72rem;color:var(--dim);}
 .repo-lang::before{content:'●';margin-right:.25rem;color:var(--gold);}
-
 /* ━━━ RESUME ━━━ */
 #resume{background:var(--bg2);}
 .resume-c{max-width:800px;margin:0 auto;text-align:center;}
@@ -372,7 +339,6 @@ section{position:relative;z-index:1;}
 .resume-stats{display:flex;justify-content:center;gap:3rem;margin-top:2.5rem;flex-wrap:wrap;}
 .rs .n{font-family:'Cormorant Garamond',serif;font-size:1.9rem;color:var(--gold);}
 .rs .l{font-size:.65rem;color:var(--dim);letter-spacing:.15em;text-transform:uppercase;}
-
 /* ━━━ PRODUCTS ━━━ */
 #products{background:var(--bg);}
 .prod-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:1.8rem;margin-top:3.5rem;}
@@ -385,7 +351,6 @@ section{position:relative;z-index:1;}
 .prod-feats{list-style:none;margin-bottom:1.3rem;}
 .prod-feats li{font-size:.8rem;color:var(--dim);padding:.3rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:.5rem;}
 .prod-feats li::before{content:'◆';color:var(--gold);font-size:.35rem;}
-
 /* ━━━ AI ASSISTANT ━━━ */
 #ai-section{background:var(--bg2);}
 .ai-inner{max-width:800px;margin:0 auto;text-align:center;}
@@ -394,7 +359,6 @@ section{position:relative;z-index:1;}
 .ai-orb-big::before{content:'';position:absolute;inset:-3px;border-radius:50%;border:2px solid transparent;background:conic-gradient(from 0deg,var(--gold),var(--crimson),var(--gold)) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:spin 3s linear infinite;}
 .ai-card-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--text);margin-bottom:.7rem;}
 .ai-card-desc{font-size:.9rem;color:var(--dim);line-height:1.8;margin-bottom:2rem;}
-
 /* ━━━ CONTACT ━━━ */
 #contact{background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);}
 .contact-g{display:grid;grid-template-columns:1fr 1.3fr;gap:4rem;margin-top:3.5rem;align-items:start;}
@@ -409,7 +373,6 @@ section{position:relative;z-index:1;}
 .cl-text{display:flex;flex-direction:column;overflow:hidden;}
 .cl-label{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
 .cl-val{font-size:.85rem;color:var(--text);margin-top:.15rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-
 .cf{padding:2.5rem;border-radius:8px;}
 .cf-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--text);margin-bottom:1.8rem;}
 .fg{position:relative;margin-bottom:1.7rem;}
@@ -419,7 +382,6 @@ section{position:relative;z-index:1;}
 .fg.ta .fl{top:1rem;transform:none;}
 .fi:focus+.fl,.fi:not(:placeholder-shown)+.fl,.ft:focus+.fl,.ft:not(:placeholder-shown)+.fl{top:-.5rem;left:.8rem;font-size:.6rem;color:var(--gold);background:var(--bg2);padding:0 .35rem;transform:none;}
 .cf-ok{display:none;text-align:center;padding:1.5rem;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold);}
-
 /* 🎖 FOOTER & LIVING SIGNATURE */
 footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem 5% 2.5rem;}
 .ft-g{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.04);}
@@ -440,7 +402,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
 .version-badge{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);border:1px solid var(--glass-border);padding:0.2rem 0.6rem;border-radius:12px;background:var(--glass-bg);}
 .btt{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,168,76,.28);padding:.4rem 1.1rem;transition:var(--tr);display:inline-flex;align-items:center;gap:.4rem;border-radius:4px;}
 .btt:hover{background:rgba(201,168,76,.09);border-color:var(--gold);}
-
 /* ═══ FLOATING AI ═══ */
 .ai-fab{position:fixed;bottom:2rem;right:2rem;z-index:500;display:flex;flex-direction:column;align-items:center;gap:.4rem;}
 .ai-orb{width:58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--crimson),var(--gold-dark));display:flex;align-items:center;justify-content:center;font-size:1.4rem;box-shadow:0 0 25px rgba(201,168,76,.35);animation:aipulse 2s ease infinite;position:relative;overflow:visible;}
@@ -451,7 +412,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
 .ai-fab:hover .ai-orb{transform:scale(1.1);}
 .ai-lbl{font-size:.57rem;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);background:rgba(8,3,0,.85);border:1px solid rgba(201,168,76,.25);padding:.25rem .55rem;white-space:nowrap;border-radius:3px;}
 .ai-fab-link{display:flex;flex-direction:column;align-items:center;gap:.4rem;}
-
 /* 🔥 LIVE BUILD ANIMATION MODAL */
 #build-modal{position:fixed;inset:0;background:rgba(5,2,0,0.92);z-index:99990;display:none;align-items:center;justify-content:center;padding:2rem;backdrop-filter:blur(12px);}
 #build-modal.active{display:flex;}
@@ -461,17 +421,14 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
 .bm-step.active{opacity:1;color:var(--gold);}
 .bm-step.done{opacity:0.8;color:var(--gold-light);}
 .bm-icon{width:28px;height:28px;border-radius:50%;border:1px solid currentColor;display:flex;align-items:center;justify-content:center;font-size:0.8rem;}
-
 /* 🧩 SECRET EXPERIENCE / DEVELOPER HUD */
 #dev-hud{position:fixed;bottom:2rem;left:2rem;z-index:9998;background:var(--glass-bg);backdrop-filter:var(--glass-blur);border:1px solid var(--gold);border-radius:8px;padding:1rem 1.5rem;display:none;flex-direction:column;gap:0.8rem;box-shadow:0 10px 30px rgba(0,0,0,0.5);}
 #dev-hud.active{display:flex;}
 .dh-title{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;justify-content:space-between;align-items:center;}
 .dh-btn{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--bg);background:var(--gold);border:none;padding:0.4rem 0.8rem;border-radius:3px;cursor:pointer;}
-
 /* 🍞 TOAST NOTIFICATION */
 #toast-notif{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(100px);background:var(--glass-bg);backdrop-filter:var(--glass-blur);border:1px solid var(--gold);color:var(--gold);padding:0.8rem 1.6rem;border-radius:30px;font-size:0.8rem;letter-spacing:0.1em;box-shadow:0 10px 30px rgba(0,0,0,0.5);z-index:100000;opacity:0;transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);pointer-events:none;}
 #toast-notif.show{transform:translateX(-50%) translateY(0);opacity:1;}
-
 /* ═══ ANIMATIONS ═══ */
 @keyframes fadeup{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @keyframes glow{0%,100%{opacity:1}50%{opacity:.6}}
@@ -488,7 +445,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
 @keyframes signDraw{to{stroke-dashoffset:0;}}
 @keyframes scanSweep{0%{top:0%;}100%{top:100%;}}
 @keyframes zoomPulse{0%{transform:scale(0.95);opacity:0.8;}100%{transform:scale(1.05);opacity:1;}}
-
 /* ═══ RESPONSIVE ═══ */
 @media(max-width:1100px){
   .about-g{grid-template-columns:1fr;}
@@ -526,7 +482,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
 </style>
 </head>
 <body>
-
 <!-- ⭐ ULTRA PREMIUM LOADER WITH GOLDEN DUST & SIGNATURE -->
 <div id="loader" role="status" aria-label="Loading page">
   <canvas id="loader-canvas"></canvas>
@@ -539,16 +494,13 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
     <div class="ld-sub">Crafting Excellence</div>
   </div>
 </div>
-
 <!-- 🛰 SATELLITE ARRIVAL SEQUENCE OVERLAY -->
 <div id="sat-arrival" aria-hidden="true">
   <div class="sat-stage" id="sat-text">INITIALIZING SATELLITE...</div>
   <div class="sat-sub">DEEP SPACE SCAN · LUCKNOW, INDIA</div>
 </div>
-
 <!-- 🍞 TOAST NOTIFICATION -->
 <div id="toast-notif" role="alert">Notification</div>
-
 <!-- 🧩 SECRET DEVELOPER HUD -->
 <div id="dev-hud">
   <div class="dh-title"><span>🛠 SECRET DEV DASHBOARD</span> <span style="font-size:0.6rem;color:var(--dim)">[ESC]</span></div>
@@ -557,7 +509,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
   <button class="dh-btn" id="btn-sat-replay">Replay Satellite Arrival</button>
   <button class="dh-btn" id="btn-scan-trigger">Run AI Skill Scan</button>
 </div>
-
 <!-- 🔥 LIVE BUILD SIMULATOR MODAL -->
 <div id="build-modal" role="dialog" aria-modal="true" aria-label="Live Build Simulation">
   <div class="bm-card">
@@ -569,17 +520,13 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
     <div class="bm-step" id="bs-4"><div class="bm-icon">4</div> Render Finished Experience</div>
   </div>
 </div>
-
 <!-- CURSOR -->
 <div id="cur" aria-hidden="true"></div>
 <div id="cur-ring" aria-hidden="true"></div>
-
 <!-- SCROLL PROGRESS -->
 <div id="prog" role="progressbar" aria-hidden="true"></div>
-
 <!-- PARTICLE CANVAS -->
 <canvas id="pcv" aria-hidden="true"></canvas>
-
 <!-- 🌍 PLANET NAVIGATION BAR -->
 <div class="planet-bar-wrap" aria-label="Planet Navigation">
   <div class="planet-node active" data-target="#hero" data-label="Space Core"></div>
@@ -589,7 +536,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
   <div class="planet-node" data-target="#certifications" data-label="Solaris (Certificates)"></div>
   <div class="planet-node" data-target="#contact" data-label="Zenith (Contact)"></div>
 </div>
-
 <!-- FLOATING AI BUTTON -->
 <div class="ai-fab" aria-label="Shaurya AI Assistant">
   <a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnsCR3EGiyB_BY1tBpYmpYdo2Zk9jsv6uFwWUbNKA5iiDqtfGw1wjGsxHnpao_aem_g1WszkXciBHAL92Rn7Hq1w"
@@ -601,7 +547,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
     <div class="ai-lbl">Shaurya AI</div>
   </a>
 </div>
-
 <!-- 💎 CRYSTAL NAVBAR -->
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <a href="#hero" class="nav-logo" id="logo-trigger" aria-label="Home">
@@ -624,7 +569,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
     </button>
   </div>
 </nav>
-
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Mobile navigation menu">
   <button class="mob-x" id="mobClose" aria-label="Close menu">✕</button>
@@ -636,7 +580,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
   <a href="#products">Products</a>
   <a href="#contact">Contact</a>
 </div>
-
 <!-- ━━━ HERO ━━━ -->
 <section id="hero" aria-label="Hero — Shaurya Mittal">
   <div class="hero-sky"></div>
@@ -696,21 +639,23 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
         </a>
       </nav>
     </div>
-    <div class="h-frame-wrap" aria-hidden="true">
+    <div class="h-frame-wrap">
       <div class="h-glow"></div>
       <div class="h-frame">
         <div class="h-frame-border"></div>
         <div class="h-corner tl"></div><div class="h-corner tr"></div>
         <div class="h-corner bl"></div><div class="h-corner br"></div>
         <div class="h-frame-inner">
-          <div class="h-avatar"><div class="h-initials">SM</div></div>
+          <div class="h-avatar">
+            <div class="h-initials">SM</div>
+            <img src="assets/shauryajpg.jpg" alt="Shaurya Mittal">
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="scroll-ind" aria-hidden="true"><span>Scroll</span><div class="scroll-line"></div></div>
 </section>
-
 <!-- ━━━ ABOUT ━━━ -->
 <section id="about" class="sec-pad" aria-label="About Shaurya Mittal">
   <div class="sec-inner">
@@ -778,7 +723,6 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
     </div>
   </div>
 </section>
-
 <!-- ━━━ SKILLS & 🧬 DIGITAL DNA ━━━ -->
 <section id="skills" class="sec-pad" aria-label="Skills">
   <div class="sec-inner">
@@ -786,14 +730,12 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
       <div class="sec-lbl">Expertise</div>
       <h2 class="sec-h">Skills &amp; <em>Technologies</em></h2>
     </div>
-
     <!-- 🧬 DIGITAL DNA 3D MODEL CONTAINER -->
     <div id="digital-dna" class="liquid-glass-card reveal">
       <div class="dna-title">🧬 Interactive Digital DNA</div>
       <div class="dna-subtitle">Click strands to inspect architectural skill genetics</div>
       <canvas id="dna-canvas"></canvas>
     </div>
-
     <!-- 💠 AI SKILL SCANNER WRAPPER -->
     <div style="position:relative;" id="skill-scanner-wrap">
       <div id="skill-scanner-line"></div>
@@ -813,505 +755,388 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
           <div class="sk-item"><span class="sk-name">VS Code</span><div class="sk-bar"><div class="sk-fill" style="--w:88%"></div></div></div>
         </div>
         <div class="sk-card liquid-glass-card">
-          <div class="sk-icon" aria-hidden="true">◈</div>
-          <div class="sk-cat">Design &amp; UX</div>
-          <div class="sk-item"><span class="sk-name">Responsive Design</span><div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div></div>
-          <div class="sk-item"><span class="sk-name">UI/UX Design</span><div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div></div>
-          <div class="sk-item"><span class="sk-name">Problem Solving</span><div class="sk-bar"><div class="sk-fill" style="--w:90%"></div></div></div>
-        </div>
-        <div class="sk-card liquid-glass-card">
-          <div class="sk-icon" aria-hidden="true">✦</div>
-          <div class="sk-cat">Emerging</div>
-          <div class="sk-item"><span class="sk-name">AI Tools</span><div class="sk-bar"><div class="sk-fill" style="--w:75%"></div></div></div>
-          <div class="sk-item"><span class="sk-name">ASP.NET Core (Learning)</span><div class="sk-bar"><div class="sk-fill" style="--w:50%"></div></div></div>
-          <div class="sk-item"><span class="sk-name">Continuous Learning</span><div class="sk-bar"><div class="sk-fill" style="--w:98%"></div></div></div>
+          <div class="sk-icon" aria-hidden="true">🤖</div>
+          <div class="sk-cat">AI &amp; Frameworks</div>
+          <div class="sk-item"><span class="sk-name">AI Integration</span><div class="sk-bar"><div class="sk-fill" style="--w:85%"></div></div></div>
+          <div class="sk-item"><span class="sk-name">Responsive Design</span><div class="sk-bar"><div class="sk-fill" style="--w:92%"></div></div></div>
+          <div class="sk-item"><span class="sk-name">Frontend Arch</span><div class="sk-bar"><div class="sk-fill" style="--w:80%"></div></div></div>
         </div>
       </div>
-    </div>
-
-    <div class="tech-wall reveal" role="list" aria-label="Technology icons">
-      <div class="tech-c" role="listitem" title="HTML5"><div class="ic" aria-hidden="true">🌐</div><div class="lb">HTML5</div></div>
-      <div class="tech-c" role="listitem" title="CSS3"><div class="ic" aria-hidden="true" style="animation-delay:.25s">🎨</div><div class="lb">CSS3</div></div>
-      <div class="tech-c" role="listitem" title="JavaScript"><div class="ic" aria-hidden="true" style="animation-delay:.5s">⚡</div><div class="lb">JavaScript</div></div>
-      <div class="tech-c" role="listitem" title="Git"><div class="ic" aria-hidden="true" style="animation-delay:.75s">🌿</div><div class="lb">Git</div></div>
-      <div class="tech-c" role="listitem" title="GitHub"><div class="ic" aria-hidden="true" style="animation-delay:1s">🐙</div><div class="lb">GitHub</div></div>
-      <div class="tech-c" role="listitem" title="VS Code"><div class="ic" aria-hidden="true" style="animation-delay:1.25s">💻</div><div class="lb">VS Code</div></div>
-      <div class="tech-c" role="listitem" title="AI"><div class="ic" aria-hidden="true" style="animation-delay:1.5s">🤖</div><div class="lb">AI</div></div>
-      <div class="tech-c" role="listitem" title="Responsive Design"><div class="ic" aria-hidden="true" style="animation-delay:1.75s">📱</div><div class="lb">Responsive</div></div>
-      <div class="tech-c" role="listitem" title="Frontend"><div class="ic" aria-hidden="true" style="animation-delay:2s">🖥</div><div class="lb">Frontend</div></div>
+      <div class="tech-wall reveal">
+        <div class="tech-c"><div class="ic">🌐</div><div class="lb">HTML5</div></div>
+        <div class="tech-c"><div class="ic">🎨</div><div class="lb">CSS3</div></div>
+        <div class="tech-c"><div class="ic">⚡</div><div class="lb">JS ES6+</div></div>
+        <div class="tech-c"><div class="ic">🐙</div><div class="lb">Git</div></div>
+        <div class="tech-c"><div class="ic">🤖</div><div class="lb">AI Tools</div></div>
+      </div>
     </div>
   </div>
 </section>
-
 <!-- ━━━ PROJECTS ━━━ -->
 <section id="projects" class="sec-pad" aria-label="Projects">
   <div class="sec-inner">
     <div class="reveal">
-      <div class="sec-lbl">Portfolio</div>
+      <div class="sec-lbl">My Work</div>
       <h2 class="sec-h">Featured <em>Projects</em></h2>
-      <div class="filt" role="group" aria-label="Filter projects">
-        <button class="f-btn on" data-f="all">All</button>
-        <button class="f-btn" data-f="ai">AI</button>
-        <button class="f-btn" data-f="security">Security</button>
-        <button class="f-btn" data-f="social">Social Impact</button>
-      </div>
     </div>
-    <div class="proj-g reveal" style="transition-delay:.15s;">
-      
-      <!-- PROJECT 1 -->
-      <article class="pc liquid-glass-card" data-cat="ai" aria-label="Shaurya AI Assistant">
-        <div class="pc-prev" style="background:linear-gradient(135deg,#0a1525,#15082d)">
-          <div class="pc-prev-icon" aria-hidden="true">🤖</div>
+    <div class="filt reveal">
+      <button class="f-btn on" data-filter="all">All Projects</button>
+      <button class="f-btn" data-filter="web">Web Apps</button>
+      <button class="f-btn" data-filter="ai">AI Tools</button>
+      <button class="f-btn" data-filter="security">Security</button>
+    </div>
+    <div class="proj-g reveal">
+      <div class="pc liquid-glass-card" data-cat="security">
+        <div class="pc-prev" style="background:linear-gradient(135deg,#1f0a0a,#3d1010);">
+          <div class="pc-prev-icon">🛡</div>
           <div class="pc-overlay">
-            <a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnsCR3EGiyB_BY1tBpYmpYdo2Zk9jsv6uFwWUbNKA5iiDqtfGw1wjGsxHnpao_aem_g1WszkXciBHAL92Rn7Hq1w" target="_blank" rel="noopener noreferrer" class="ov-btn">↗ Live Preview</a>
-            <button class="ov-btn trigger-live-build">⚡ Live Build</button>
+            <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="ov-btn">GitHub Repo</a>
           </div>
         </div>
         <div class="pc-info">
-          <div class="pc-tags"><span class="pc-tag">AI</span><span class="pc-tag">JavaScript</span><span class="pc-tag">HTML/CSS</span></div>
-          <h3 class="pc-title">Shaurya AI Assistant</h3>
-          <p class="pc-desc">An intelligent AI assistant for real-time interaction with smart responses and an intuitive interface. Powered by advanced AI integration for seamless user experience.</p>
-          <div class="pc-acts">
-            <a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnsCR3EGiyB_BY1tBpYmpYdo2Zk9jsv6uFwWUbNKA5iiDqtfGw1wjGsxHnpao_aem_g1WszkXciBHAL92Rn7Hq1w" target="_blank" rel="noopener noreferrer" class="p-btn pri">↗ Live Demo</a>
-            <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="p-btn">⟨/⟩ Code</a>
-          </div>
-          <!-- ⚡ PROJECT POWER METER -->
-          <div class="proj-power-meter">
-            <div class="pm-item"><div class="pm-label">UI / UX <span>95%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:95%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">Performance <span>98%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:98%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">AI Integration <span>96%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:96%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">Security <span>92%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:92%"></div></div></div>
-          </div>
-        </div>
-      </article>
-
-      <!-- PROJECT 2 -->
-      <article class="pc liquid-glass-card" data-cat="security" aria-label="Shaurya Security Antivirus">
-        <div class="pc-prev" style="background:linear-gradient(135deg,#1a0808,#2a1008)">
-          <div class="pc-prev-icon" aria-hidden="true">🛡</div>
-          <div class="pc-overlay">
-            <a href="https://shaurya79878.github.io/-ShauryaSentinel/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGn5_JBILPKgskZYXZqNSfB6a4t51kan9cc2cSzY_yuER2r1gXwde5Zo3gfISM_aem_70Mp6i7Ez4yZk8ipBBF8vg" target="_blank" rel="noopener noreferrer" class="ov-btn">↗ Live Preview</a>
-            <button class="ov-btn trigger-live-build">⚡ Live Build</button>
-          </div>
-        </div>
-        <div class="pc-info">
-          <div class="pc-tags"><span class="pc-tag">Security</span><span class="pc-tag">JavaScript</span><span class="pc-tag">Web App</span></div>
+          <div class="pc-tags"><span class="pc-tag">Security</span><span class="pc-tag">Software</span></div>
           <h3 class="pc-title">Shaurya Security Antivirus</h3>
-          <p class="pc-desc">A web-based security and antivirus tool for digital protection. Features threat detection, safety scanning, and comprehensive digital security guidance.</p>
+          <p class="pc-desc">A protective software solution designed to safeguard systems against digital threats and malware.</p>
           <div class="pc-acts">
-            <a href="https://shaurya79878.github.io/-ShauryaSentinel/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGn5_JBILPKgskZYXZqNSfB6a4t51kan9cc2cSzY_yuER2r1gXwde5Zo3gfISM_aem_70Mp6i7Ez4yZk8ipBBF8vg" target="_blank" rel="noopener noreferrer" class="p-btn pri">↗ Live Demo</a>
-            <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="p-btn">⟨/⟩ Code</a>
+            <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="p-btn pri">View Project</a>
           </div>
-          <!-- ⚡ PROJECT POWER METER -->
           <div class="proj-power-meter">
-            <div class="pm-item"><div class="pm-label">UI / UX <span>90%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:90%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">Performance <span>95%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:95%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">AI Integration <span>85%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:85%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">Security <span>98%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:98%"></div></div></div>
+            <div class="pm-item"><div class="pm-label">Protection <span>95%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="width:95%"></div></div></div>
+            <div class="pm-item"><div class="pm-label">Performance <span>90%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="width:90%"></div></div></div>
           </div>
         </div>
-      </article>
-
-      <!-- PROJECT 3 -->
-      <article class="pc liquid-glass-card" data-cat="social" aria-label="Safe Indian Helpline Yojna">
-        <div class="pc-prev" style="background:linear-gradient(135deg,#082510,#102508)">
-          <div class="pc-prev-icon" aria-hidden="true">🇮🇳</div>
+      </div>
+      <div class="pc liquid-glass-card" data-cat="web">
+        <div class="pc-prev" style="background:linear-gradient(135deg,#0d1a10,#15301c);">
+          <div class="pc-prev-icon">🇮🇳</div>
           <div class="pc-overlay">
-            <a href="https://shaurya79878.github.io/SafeIndia.github.io/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnoaDozyoAzVoWcjlBwhOBC0iSQ7sHfQv5nkGbBRjZPjRtx8kS--wY2YRrqBA_aem_FjnZ8z3HJXWgR47ygM7oZg&utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" class="ov-btn">↗ Live Preview</a>
-            <button class="ov-btn trigger-live-build">⚡ Live Build</button>
+            <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="ov-btn">GitHub Repo</a>
           </div>
         </div>
         <div class="pc-info">
-          <div class="pc-tags"><span class="pc-tag">Social Impact</span><span class="pc-tag">HTML/CSS</span><span class="pc-tag">JavaScript</span></div>
+          <div class="pc-tags"><span class="pc-tag">Public Service</span><span class="pc-tag">Web Portal</span></div>
           <h3 class="pc-title">Safe Indian Helpline Yojna</h3>
-          <p class="pc-desc">A civic tech platform providing accessible emergency helpline information to Indian citizens — bridging people with critical safety services.</p>
+          <p class="pc-desc">A comprehensive platform bridging citizens with essential emergency services and welfare schemes.</p>
           <div class="pc-acts">
-            <a href="https://shaurya79878.github.io/SafeIndia.github.io/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnoaDozyoAzVoWcjlBwhOBC0iSQ7sHfQv5nkGbBRjZPjRtx8kS--wY2YRrqBA_aem_FjnZ8z3HJXWgR47ygM7oZg&utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" class="p-btn pri">↗ Live Demo</a>
-            <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="p-btn">⟨/⟩ Code</a>
+            <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="p-btn pri">View Project</a>
           </div>
-          <!-- ⚡ PROJECT POWER METER -->
           <div class="proj-power-meter">
-            <div class="pm-item"><div class="pm-label">UI / UX <span>92%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:92%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">Performance <span>96%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:96%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">Accessibility <span>98%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:98%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">Security <span>90%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:90%"></div></div></div>
+            <div class="pm-item"><div class="pm-label">Reach <span>88%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="width:88%"></div></div></div>
+            <div class="pm-item"><div class="pm-label">UX Rating <span>92%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="width:92%"></div></div></div>
           </div>
         </div>
-      </article>
-
-      <!-- PROJECT 4 -->
-      <article class="pc liquid-glass-card" data-cat="ai security" aria-label="Bharat Rakshak 3.0">
-        <div class="pc-prev" style="background:linear-gradient(135deg,#1a1500,#2a1a00)">
-          <div class="pc-prev-icon" aria-hidden="true">⚔</div>
+      </div>
+      <div class="pc liquid-glass-card" data-cat="ai">
+        <div class="pc-prev" style="background:linear-gradient(135deg,#1c1008,#3a2010);">
+          <div class="pc-prev-icon">🤖</div>
           <div class="pc-overlay">
-            <a href="https://shaurya79878.github.io/BharatRakshak3.0/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnQ2OA-HPiuqp5TJwLuDI71FksOkm3VonbHcURhTpu9PeKyy2zUjtzDr3V9Hc_aem_bOrzYyAqNpHKNkYeaMu-QQ" target="_blank" rel="noopener noreferrer" class="ov-btn">↗ Live Preview</a>
-            <button class="ov-btn trigger-live-build">⚡ Live Build</button>
+            <a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/" target="_blank" rel="noopener noreferrer" class="ov-btn">Live Demo</a>
           </div>
         </div>
         <div class="pc-info">
-          <div class="pc-tags"><span class="pc-tag">AI</span><span class="pc-tag">Defense</span><span class="pc-tag">JavaScript</span></div>
+          <div class="pc-tags"><span class="pc-tag">AI &amp; Robotics</span><span class="pc-tag">Web App</span></div>
           <h3 class="pc-title">Bharat Rakshak 3.0</h3>
-          <p class="pc-desc">Advanced digital defense system — version 3.0 combining AI capabilities with national security awareness and interactive defense modules.</p>
+          <p class="pc-desc">An advanced AI-powered platform integrating intelligent assistance and safety technology.</p>
           <div class="pc-acts">
-            <a href="https://shaurya79878.github.io/BharatRakshak3.0/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnQ2OA-HPiuqp5TJwLuDI71FksOkm3VonbHcURhTpu9PeKyy2zUjtzDr3V9Hc_aem_bOrzYyAqNpHKNkYeaMu-QQ" target="_blank" rel="noopener noreferrer" class="p-btn pri">↗ Live Demo</a>
-            <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="p-btn">⟨/⟩ Code</a>
+            <a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/" target="_blank" rel="noopener noreferrer" class="p-btn pri">Live Demo</a>
           </div>
-          <!-- ⚡ PROJECT POWER METER -->
           <div class="proj-power-meter">
-            <div class="pm-item"><div class="pm-label">UI / UX <span>94%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:94%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">Performance <span>95%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:95%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">AI Integration <span>97%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:97%"></div></div></div>
-            <div class="pm-item"><div class="pm-label">Security <span>96%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="--w:96%"></div></div></div>
+            <div class="pm-item"><div class="pm-label">AI Intelligence <span>96%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="width:96%"></div></div></div>
+            <div class="pm-item"><div class="pm-label">Speed <span>94%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="width:94%"></div></div></div>
           </div>
         </div>
-      </article>
-
+      </div>
+      <div class="pc liquid-glass-card" data-cat="ai">
+        <div class="pc-prev" style="background:linear-gradient(135deg,#120024,#28004d);">
+          <div class="pc-prev-icon">🧠</div>
+          <div class="pc-overlay">
+            <a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/" target="_blank" rel="noopener noreferrer" class="ov-btn">Try Assistant</a>
+          </div>
+        </div>
+        <div class="pc-info">
+          <div class="pc-tags"><span class="pc-tag">AI Assistant</span><span class="pc-tag">LLM Interface</span></div>
+          <h3 class="pc-title">Shaurya AI Assistant</h3>
+          <p class="pc-desc">Interactive conversational AI assistant engineered for smart query answering and user engagement.</p>
+          <div class="pc-acts">
+            <a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/" target="_blank" rel="noopener noreferrer" class="p-btn pri">Launch AI</a>
+          </div>
+          <div class="proj-power-meter">
+            <div class="pm-item"><div class="pm-label">Accuracy <span>92%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="width:92%"></div></div></div>
+            <div class="pm-item"><div class="pm-label">Response <span>98%</span></div><div class="pm-bar-wrap"><div class="pm-bar-fill" style="width:98%"></div></div></div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-
 <!-- ━━━ EXPERIENCE & EDUCATION ━━━ -->
-<section id="experience" class="sec-pad" aria-label="Experience and Education">
+<section id="experience" class="sec-pad" aria-label="Journey">
   <div class="sec-inner">
     <div class="reveal">
-      <div class="sec-lbl">Journey</div>
+      <div class="sec-lbl">Milestones</div>
       <h2 class="sec-h">Experience &amp; <em>Education</em></h2>
     </div>
-    <div class="exp-g">
-      <div class="reveal">
-        <div class="exp-col-h">Experience</div>
+    <div class="exp-g reveal">
+      <div>
+        <h3 class="exp-col-h">Education</h3>
         <div class="exp-card liquid-glass-card">
-          <div class="exp-yr">2023 — Present</div>
-          <div class="exp-title">Independent Developer</div>
-          <div class="exp-org">Self-Employed · Lucknow, India</div>
-          <div class="exp-desc">Building real-world web applications, security tools, and AI-powered projects. Delivering complete, production-ready solutions from concept to deployment on GitHub Pages.</div>
+          <div class="exp-yr">Current — 2026</div>
+          <h4 class="exp-title">Class 10th (CBSE Board)</h4>
+          <div class="exp-org">Lucknow Public School, Lucknow</div>
+          <p class="exp-desc">Focusing on Academics, Science, Mathematics, and Computer Science applications.</p>
         </div>
         <div class="exp-card liquid-glass-card">
-          <div class="exp-yr">2024 — Present</div>
-          <div class="exp-title">Frontend Developer &amp; AI Enthusiast</div>
-          <div class="exp-org">Personal Projects · GitHub</div>
-          <div class="exp-desc">Developing and publishing multiple web projects. Specializing in responsive design, interactive JavaScript, and AI integration for web platforms.</div>
-        </div>
-        <div class="exp-card liquid-glass-card">
-          <div class="exp-yr">2025</div>
-          <div class="exp-title">Civic Tech Builder</div>
-          <div class="exp-org">Safe India Initiative</div>
-          <div class="exp-desc">Created Safe Indian Helpline Yojna — a social impact platform connecting Indian citizens with emergency services. Built from scratch for public benefit.</div>
-        </div>
-        <div class="exp-card liquid-glass-card">
-          <div class="exp-yr">2025</div>
-          <div class="exp-title">AI Platform Developer</div>
-          <div class="exp-org">Shaurya AI Projects</div>
-          <div class="exp-desc">Designed and developed an AI-powered platform, earning a Certificate of Achievement. Integrated LLM capabilities into web applications.</div>
+          <div class="exp-yr">Foundational</div>
+          <h4 class="exp-title">Primary Schooling</h4>
+          <div class="exp-org">St. Paul's College, Lucknow</div>
+          <p class="exp-desc">Completed early primary education building strong academic fundamentals.</p>
         </div>
       </div>
-      <div class="reveal" style="transition-delay:.2s;">
-        <div class="exp-col-h">Education</div>
+      <div>
+        <h3 class="exp-col-h">Projects &amp; Achievements</h3>
         <div class="exp-card liquid-glass-card">
-          <div class="exp-yr">Present · 2026</div>
-          <div class="exp-title">Class 10th (CBSE)</div>
-          <div class="exp-org">Lucknow Public School, Lucknow</div>
-          <div class="exp-desc">Currently pursuing secondary education. Balancing rigorous academics with passion-driven development projects and AI research.</div>
+          <div class="exp-yr">2025</div>
+          <h4 class="exp-title">Creator &amp; Frontend Lead</h4>
+          <div class="exp-org">Bharat Rakshak 3.0 &amp; Shaurya AI</div>
+          <p class="exp-desc">Designed and deployed interactive web applications leveraging AI technologies.</p>
         </div>
         <div class="exp-card liquid-glass-card">
-          <div class="exp-yr">Early Schooling</div>
-          <div class="exp-title">Till Class 2nd</div>
-          <div class="exp-org">St. Paul's College, Lucknow</div>
-          <div class="exp-desc">Foundational education at one of Lucknow's prestigious and historic institutions.</div>
-        </div>
-        <div class="exp-card liquid-glass-card">
-          <div class="exp-yr">Self-Directed</div>
-          <div class="exp-title">Web Development</div>
-          <div class="exp-org">Online Learning · Various Platforms</div>
-          <div class="exp-desc">Mastered HTML5, CSS3, and JavaScript through structured self-learning and practical project building alongside formal education.</div>
-        </div>
-        <div class="exp-card liquid-glass-card">
-          <div class="exp-yr">2024 — Ongoing</div>
-          <div class="exp-title">Microsoft Learn — AI &amp; .NET</div>
-          <div class="exp-org">Microsoft Learn Platform</div>
-          <div class="exp-desc">Earned multiple Microsoft certifications in AI concepts, Generative AI, Sustainable Software Engineering, and ASP.NET Core Web API development.</div>
+          <div class="exp-yr">2024</div>
+          <h4 class="exp-title">Developer &amp; Security Enthusiast</h4>
+          <div class="exp-org">Shaurya Security &amp; Safe Indian Helpline</div>
+          <p class="exp-desc">Built initial utility tools for public safety and software system security.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- 🏆 HALL OF ACHIEVEMENTS / CERTIFICATIONS ━━━ -->
 <section id="certifications" class="sec-pad" aria-label="Certifications">
   <div class="hall-glass-floor"></div>
   <div class="sec-inner">
     <div class="reveal">
-      <div class="sec-lbl">Credentials</div>
-      <h2 class="sec-h">Hall of <em>Achievements</em></h2>
+      <div class="sec-lbl">Recognition</div>
+      <h2 class="sec-h">Hall of <em>Certifications</em></h2>
     </div>
-    <div class="cert-g reveal" style="transition-delay:.15s;">
+    <div class="cert-g reveal">
       <div class="cert-c liquid-glass-card">
-        <div class="cert-ico" aria-hidden="true">🤖</div>
+        <div class="cert-ico">📜</div>
         <div>
-          <div class="cert-name">What is Generative AI?</div>
-          <div class="cert-iss">Microsoft Learn</div>
-          <div class="cert-badge">Earned 2024</div>
+          <h3 class="cert-name">Certificate of Achievement</h3>
+          <div class="cert-iss">AI &amp; Web Development</div>
+          <span class="cert-badge">Verified</span>
         </div>
       </div>
       <div class="cert-c liquid-glass-card">
-        <div class="cert-ico" aria-hidden="true">♻</div>
+        <div class="cert-ico">🎗</div>
         <div>
-          <div class="cert-name">The Principles of Sustainable Software Engineering</div>
-          <div class="cert-iss">Microsoft Learn</div>
-          <div class="cert-badge">Earned 2024</div>
+          <h3 class="cert-name">Microsoft Learn Certification</h3>
+          <div class="cert-iss">Microsoft</div>
+          <span class="cert-badge">Microsoft</span>
         </div>
       </div>
       <div class="cert-c liquid-glass-card">
-        <div class="cert-ico" aria-hidden="true">⚙</div>
+        <div class="cert-ico">🎓</div>
         <div>
-          <div class="cert-name">Create a Web API with ASP.NET Core Controllers</div>
-          <div class="cert-iss">Microsoft Learn</div>
-          <div class="cert-badge">Earned 2024</div>
+          <h3 class="cert-name">Web Development Essentials</h3>
+          <div class="cert-iss">Frontend Development</div>
+          <span class="cert-badge">Completed</span>
         </div>
       </div>
       <div class="cert-c liquid-glass-card">
-        <div class="cert-ico" aria-hidden="true">💡</div>
+        <div class="cert-ico">🌟</div>
         <div>
-          <div class="cert-name">Introduction to AI Concepts</div>
-          <div class="cert-iss">Microsoft Learn</div>
-          <div class="cert-badge">Earned 2024</div>
-        </div>
-      </div>
-      <div class="cert-c liquid-glass-card">
-        <div class="cert-ico" aria-hidden="true">🏆</div>
-        <div>
-          <div class="cert-name">Certificate of Achievement — AI Platform</div>
-          <div class="cert-iss">AI-Powered Platform Development</div>
-          <div class="cert-badge">Shaurya Mittal · 2025</div>
-        </div>
-      </div>
-      <div class="cert-c liquid-glass-card">
-        <div class="cert-ico" aria-hidden="true">🌐</div>
-        <div>
-          <div class="cert-name">Frontend Development Mastery</div>
-          <div class="cert-iss">Project-Based Self Certification</div>
-          <div class="cert-badge">Ongoing</div>
+          <h3 class="cert-name">AI Technology Fundamentals</h3>
+          <div class="cert-iss">AI &amp; Innovations</div>
+          <span class="cert-badge">Achieved</span>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- ━━━ GITHUB ━━━ -->
-<section id="github" class="sec-pad" aria-label="GitHub dashboard">
+<section id="github" class="sec-pad" aria-label="GitHub">
   <div class="sec-inner">
     <div class="reveal">
       <div class="sec-lbl">Open Source</div>
-      <h2 class="sec-h">GitHub <em>Dashboard</em></h2>
+      <h2 class="sec-h">GitHub <em>Activity</em></h2>
     </div>
-    <div class="gh-profile liquid-glass-card reveal" style="transition-delay:.1s;">
-      <div class="gh-av" aria-hidden="true">SM</div>
+    <div class="gh-profile liquid-glass-card reveal">
+      <div class="gh-av">SM</div>
       <div class="gh-info">
-        <div class="gh-uname">shaurya1233</div>
-        <div class="gh-bio">Student · Web Developer · AI Enthusiast · Building for Bharat 🇮🇳 · Lucknow</div>
+        <h3 class="gh-uname">Shaurya Mittal (@shaurya1233)</h3>
+        <p class="gh-bio">Student · Web Developer · AI Enthusiast from Lucknow, India.</p>
         <div class="gh-stats">
-          <div class="gh-stat"><div class="n" data-count="4">0</div><div class="l">Repos</div></div>
-          <div class="gh-stat"><div class="n" data-count="12">0</div><div class="l">Stars</div></div>
-          <div class="gh-stat"><div class="n" data-count="8">0</div><div class="l">Followers</div></div>
-          <div class="gh-stat"><div class="n" data-count="100">0</div><div class="l">Contributions</div></div>
+          <div class="gh-stat"><div class="n">4+</div><div class="l">Repositories</div></div>
+          <div class="gh-stat"><div class="n">5+</div><div class="l">Certificates</div></div>
+          <div class="gh-stat"><div class="n">100%</div><div class="l">Dedication</div></div>
         </div>
       </div>
-      <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="gh-link" aria-label="View GitHub profile">↗ View Profile</a>
+      <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="gh-link">View GitHub Profile ↗</a>
     </div>
-    <div class="gh-heatmap-wrap liquid-glass-card reveal" aria-label="Contribution heatmap">
-      <div class="gh-hm-title">Contribution Activity</div>
-      <div class="hm" id="hm" aria-hidden="true"></div>
+    <div class="gh-heatmap-wrap liquid-glass-card reveal">
+      <h3 class="gh-hm-title">Contributions Calendar</h3>
+      <div class="hm">
+        <div class="hm-c hm-1"></div><div class="hm-c hm-2"></div><div class="hm-c hm-3"></div><div class="hm-c hm-4"></div>
+        <div class="hm-c hm-0"></div><div class="hm-c hm-1"></div><div class="hm-c hm-2"></div><div class="hm-c hm-3"></div>
+        <div class="hm-c hm-4"></div><div class="hm-c hm-1"></div><div class="hm-c hm-2"></div><div class="hm-c hm-3"></div>
+        <div class="hm-c hm-0"></div><div class="hm-c hm-1"></div><div class="hm-c hm-2"></div><div class="hm-c hm-4"></div>
+        <div class="hm-c hm-3"></div><div class="hm-c hm-2"></div><div class="hm-c hm-1"></div><div class="hm-c hm-4"></div>
+        <div class="hm-c hm-2"></div><div class="hm-c hm-3"></div><div class="hm-c hm-1"></div><div class="hm-c hm-0"></div>
+        <div class="hm-c hm-4"></div><div class="hm-c hm-2"></div><div class="hm-c hm-3"></div><div class="hm-c hm-1"></div>
+        <div class="hm-c hm-3"></div><div class="hm-c hm-4"></div><div class="hm-c hm-2"></div><div class="hm-c hm-1"></div>
+        <div class="hm-c hm-0"></div><div class="hm-c hm-2"></div><div class="hm-c hm-3"></div><div class="hm-c hm-4"></div>
+        <div class="hm-c hm-1"></div><div class="hm-c hm-2"></div><div class="hm-c hm-3"></div><div class="hm-c hm-4"></div>
+        <div class="hm-c hm-2"></div><div class="hm-c hm-1"></div><div class="hm-c hm-3"></div><div class="hm-c hm-4"></div>
+        <div class="hm-c hm-0"></div><div class="hm-c hm-2"></div><div class="hm-c hm-3"></div><div class="hm-c hm-4"></div>
+        <div class="hm-c hm-1"></div><div class="hm-c hm-2"></div><div class="hm-c hm-3"></div><div class="hm-c hm-4"></div>
+      </div>
     </div>
-    <div class="repo-g reveal" style="transition-delay:.2s;" aria-label="Repositories">
+    <div class="repo-g reveal">
       <div class="repo-c liquid-glass-card">
-        <div class="repo-name">BharatRakshakPvtROBO.1</div>
-        <div class="repo-desc">Shaurya AI Assistant — intelligent AI bot, interactive and responsive for the web.</div>
-        <div class="repo-meta"><span class="repo-lang">JavaScript</span><span>⭐ 4</span><span>🍴 2</span></div>
+        <h3 class="repo-name">BharatRakshakPvtROBO.1</h3>
+        <p class="repo-desc">AI-powered web platform integrating smart assistant capabilities.</p>
+        <div class="repo-meta"><span class="repo-lang">JavaScript</span><span>HTML/CSS</span></div>
       </div>
       <div class="repo-c liquid-glass-card">
-        <div class="repo-name">-ShauryaSentinel</div>
-        <div class="repo-desc">Shaurya Security Antivirus — web-based threat detection and digital protection tool.</div>
-        <div class="repo-meta"><span class="repo-lang">JavaScript</span><span>⭐ 3</span><span>🍴 1</span></div>
-      </div>
-      <div class="repo-c liquid-glass-card">
-        <div class="repo-name">SafeIndia.github.io</div>
-        <div class="repo-desc">Safe Indian Helpline Yojna — civic tech for emergency services access across India.</div>
-        <div class="repo-meta"><span class="repo-lang">HTML</span><span>⭐ 3</span><span>🍴 1</span></div>
-      </div>
-      <div class="repo-c liquid-glass-card">
-        <div class="repo-name">BharatRakshak3.0</div>
-        <div class="repo-desc">Bharat Rakshak 3.0 — advanced AI-powered digital defense and awareness system.</div>
-        <div class="repo-meta"><span class="repo-lang">JavaScript</span><span>⭐ 2</span><span>🍴 0</span></div>
+        <h3 class="repo-name">Shaurya-Security</h3>
+        <p class="repo-desc">Security software project designed for system defense and malware detection concepts.</p>
+        <div class="repo-meta"><span class="repo-lang">HTML/CSS</span><span>JS</span></div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- ━━━ RESUME ━━━ -->
 <section id="resume" class="sec-pad" aria-label="Resume">
   <div class="sec-inner">
     <div class="resume-c reveal">
-      <div class="sec-lbl">Documents</div>
-      <h2 class="sec-h">My <em>Resume</em></h2>
       <div class="resume-card liquid-glass-card">
-        <div class="resume-ico" aria-hidden="true">📜</div>
-        <div class="resume-title">Shaurya Mittal</div>
-        <div class="resume-sub">Student · Web Developer · AI Enthusiast · Frontend Developer · Lucknow</div>
-        <a href="https://www.instagram.com/p/DaOAZHrTyyz/?igsh=dndvNDd4ZDdpaXB1" target="_blank" rel="noopener noreferrer" class="btn-g" style="display:inline-flex;margin:0 auto;" aria-label="Download Resume">↓ Download Resume</a>
+        <div class="resume-ico">📄</div>
+        <h2 class="resume-title">Curriculum Vitae</h2>
+        <p class="resume-sub">Download or view my complete resume detailing skills, education, and projects.</p>
+        <a href="https://www.instagram.com/p/DaOAZHrTyyz/?igsh=dndvNDd4ZDdpaXB1" target="_blank" rel="noopener noreferrer" class="btn-g">↓ Download Resume</a>
         <div class="resume-stats">
-          <div class="rs"><div class="n" data-count="4">0</div><div class="l">Projects</div></div>
-          <div class="rs"><div class="n" data-count="5">0</div><div class="l">Certifications</div></div>
-          <div class="rs"><div class="n" data-count="3">0</div><div class="l">Core Skills</div></div>
-          <div class="rs"><div class="n" data-count="100">0</div><div class="l">% Passion</div></div>
+          <div class="rs"><div class="n">Class 10</div><div class="l">Education</div></div>
+          <div class="rs"><div class="n">4+</div><div class="l">Projects</div></div>
+          <div class="rs"><div class="n">5+</div><div class="l">Certificates</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 <!-- ━━━ PRODUCTS ━━━ -->
-<section id="products" class="sec-pad" aria-label="Featured products">
+<section id="products" class="sec-pad" aria-label="Products">
   <div class="sec-inner">
     <div class="reveal">
       <div class="sec-lbl">Creations</div>
       <h2 class="sec-h">Featured <em>Products</em></h2>
     </div>
-    <div class="prod-g reveal" style="transition-delay:.15s;">
-      <article class="prod-c liquid-glass-card" aria-label="Shaurya Security Antivirus">
-        <div class="prod-banner" style="background:linear-gradient(135deg,#1a0505,#2a1008)">
-          <span aria-hidden="true">🛡</span>
-          <div class="prod-badge">Security</div>
+    <div class="prod-g reveal">
+      <div class="prod-c liquid-glass-card">
+        <div class="prod-banner" style="background:linear-gradient(135deg,#1f0a0a,#3a1010);">
+          <span>🤖</span>
+          <span class="prod-badge">Featured</span>
         </div>
         <div class="prod-info">
-          <h3 class="prod-title">Shaurya Security Antivirus</h3>
-          <p class="prod-desc">Comprehensive web-based security suite — threat scanning, digital protection advice, and real-time security guidance for everyday users.</p>
+          <h3 class="prod-title">Bharat Rakshak AI</h3>
+          <p class="prod-desc">An intelligent AI suite built for public safety awareness and real-time interaction.</p>
           <ul class="prod-feats">
-            <li>Threat Detection Engine</li>
-            <li>Digital Safety Guidance</li>
-            <li>Interactive Security Scanner</li>
-            <li>Mobile-Friendly Interface</li>
+            <li>Interactive Chat Interface</li>
+            <li>Instant Query Resolution</li>
+            <li>Responsive Mobile &amp; Desktop Design</li>
           </ul>
-          <a href="https://shaurya79878.github.io/-ShauryaSentinel/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGn5_JBILPKgskZYXZqNSfB6a4t51kan9cc2cSzY_yuER2r1gXwde5Zo3gfISM_aem_70Mp6i7Ez4yZk8ipBBF8vg" target="_blank" rel="noopener noreferrer" class="p-btn pri">↗ Live Demo</a>
         </div>
-      </article>
-      <article class="prod-c liquid-glass-card" aria-label="Safe Indian Helpline Yojna">
-        <div class="prod-banner" style="background:linear-gradient(135deg,#081a10,#10250a)">
-          <span aria-hidden="true">🇮🇳</span>
-          <div class="prod-badge">Civic Tech</div>
+      </div>
+      <div class="prod-c liquid-glass-card">
+        <div class="prod-banner" style="background:linear-gradient(135deg,#0d1a10,#15301c);">
+          <span>🛡</span>
+          <span class="prod-badge">Security</span>
         </div>
         <div class="prod-info">
-          <h3 class="prod-title">Safe Indian Helpline Yojna</h3>
-          <p class="prod-desc">Social impact platform bridging Indian citizens with critical emergency services. Serving Bharat, one click at a time.</p>
+          <h3 class="prod-title">Shaurya Security Tool</h3>
+          <p class="prod-desc">Desktop protection utility focusing on system safety and malware awareness.</p>
           <ul class="prod-feats">
-            <li>Emergency Helpline Directory</li>
-            <li>State-wise Service Mapping</li>
-            <li>Mobile-First Design</li>
-            <li>Accessible for All Users</li>
+            <li>System Safety Scanning Concepts</li>
+            <li>User-friendly Interface</li>
+            <li>Lightweight Execution</li>
           </ul>
-          <a href="https://shaurya79878.github.io/SafeIndia.github.io/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnoaDozyoAzVoWcjlBwhOBC0iSQ7sHfQv5nkGbBRjZPjRtx8kS--wY2YRrqBA_aem_FjnZ8z3HJXWgR47ygM7oZg&utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer" class="p-btn pri">↗ Live Demo</a>
         </div>
-      </article>
-      <article class="prod-c liquid-glass-card" aria-label="Bharat Rakshak 3.0">
-        <div class="prod-banner" style="background:linear-gradient(135deg,#1a1500,#251a00)">
-          <span aria-hidden="true">⚔</span>
-          <div class="prod-badge">Defense AI</div>
-        </div>
-        <div class="prod-info">
-          <h3 class="prod-title">Bharat Rakshak 3.0</h3>
-          <p class="prod-desc">Third evolution of the Bharat Rakshak series — AI-powered digital defense and awareness platform for the modern Indian citizen.</p>
-          <ul class="prod-feats">
-            <li>AI-Powered Defense Insights</li>
-            <li>Interactive Security Modules</li>
-            <li>National Awareness Platform</li>
-            <li>Advanced UI Experience</li>
-          </ul>
-          <a href="https://shaurya79878.github.io/BharatRakshak3.0/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnQ2OA-HPiuqp5TJwLuDI71FksOkm3VonbHcURhTpu9PeKyy2zUjtzDr3V9Hc_aem_bOrzYyAqNpHKNkYeaMu-QQ" target="_blank" rel="noopener noreferrer" class="p-btn pri">↗ Live Demo</a>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ━━━ AI ASSISTANT ━━━ -->
-<section id="ai-section" class="sec-pad" aria-label="Shaurya AI Assistant">
-  <div class="sec-inner">
-    <div class="ai-inner reveal">
-      <div class="sec-lbl">Intelligence</div>
-      <h2 class="sec-h">Shaurya <em>AI Assistant</em></h2>
-      <div class="ai-card liquid-glass-card">
-        <div class="ai-orb-big" aria-hidden="true">🤖</div>
-        <div class="ai-card-title">Meet Shaurya AI</div>
-        <div class="ai-card-desc">An intelligent AI assistant built for real-time conversation, answering questions, and showcasing the intersection of modern AI with practical web development. Click below to launch the full AI experience.</div>
-        <a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnsCR3EGiyB_BY1tBpYmpYdo2Zk9jsv6uFwWUbNKA5iiDqtfGw1wjGsxHnpao_aem_g1WszkXciBHAL92Rn7Hq1w" target="_blank" rel="noopener noreferrer" class="btn-g" style="display:inline-flex;margin:0 auto;">✦ Launch Shaurya AI</a>
       </div>
     </div>
   </div>
 </section>
-
+<!-- ━━━ AI ASSISTANT ━━━ -->
+<section id="ai-section" class="sec-pad" aria-label="AI Assistant">
+  <div class="sec-inner">
+    <div class="ai-inner reveal">
+      <div class="ai-card liquid-glass-card">
+        <div class="ai-orb-big">🤖</div>
+        <h2 class="ai-card-title">Meet Shaurya AI Assistant</h2>
+        <p class="ai-card-desc">Experience an intelligent conversational AI crafted to answer queries and guide visitors through my work.</p>
+        <a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnsCR3EGiyB_BY1tBpYmpYdo2Zk9jsv6uFwWUbNKA5iiDqtfGw1wjGsxHnpao_aem_g1WszkXciBHAL92Rn7Hq1w" target="_blank" rel="noopener noreferrer" class="btn-g">Talk to Shaurya AI ✦</a>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ━━━ CONTACT ━━━ -->
 <section id="contact" class="sec-pad" aria-label="Contact">
   <div class="sec-inner">
     <div class="reveal">
       <div class="sec-lbl">Get In Touch</div>
-      <h2 class="sec-h">Let's Build <em>Together</em></h2>
+      <h2 class="sec-h">Let's Connect &amp; <em>Collaborate</em></h2>
     </div>
-    <div class="contact-g">
-      <div class="reveal">
-        <p class="contact-intro">Whether you're interested in collaborating on a web project, discussing AI possibilities, or simply saying hello — my inbox is always open.</p>
+    <div class="contact-g reveal">
+      <div>
+        <p class="contact-intro">Have an inquiry, project proposal, or just want to connect? Feel free to reach out anytime through email or social links!</p>
         <div class="contact-links">
-          <a href="mailto:mittalshaurya66@gmail.com" class="cl-item copy-email-btn" title="Click to copy email">
+          <a href="mailto:mittalshaurya66@gmail.com" class="cl-item liquid-glass-card">
             <div class="cl-ico"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
-            <div class="cl-text"><span class="cl-label">Direct Email</span><span class="cl-val">mittalshaurya66@gmail.com</span></div>
+            <div class="cl-text"><span class="cl-label">Email</span><span class="cl-val">mittalshaurya66@gmail.com</span></div>
           </a>
-          <a href="https://www.linkedin.com/in/shaurya-mittal-487b17374?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="cl-item">
+          <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="cl-item liquid-glass-card">
+            <div class="cl-ico"><svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
+            <div class="cl-text"><span class="cl-label">GitHub</span><span class="cl-val">@shaurya1233</span></div>
+          </a>
+          <a href="https://www.linkedin.com/in/shaurya-mittal-487b17374" target="_blank" rel="noopener noreferrer" class="cl-item liquid-glass-card">
             <div class="cl-ico"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></div>
             <div class="cl-text"><span class="cl-label">LinkedIn</span><span class="cl-val">Shaurya Mittal</span></div>
           </a>
-          <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="cl-item">
-            <div class="cl-ico"><svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></div>
-            <div class="cl-text"><span class="cl-label">GitHub</span><span class="cl-val">shaurya1233</span></div>
-          </a>
-          <a href="https://www.instagram.com/shaurya_mittal56?igsh=bTJjZDFtN2JuYmw2" target="_blank" rel="noopener noreferrer" class="cl-item">
+          <a href="https://www.instagram.com/shaurya_mittal56" target="_blank" rel="noopener noreferrer" class="cl-item liquid-glass-card">
             <div class="cl-ico"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></div>
             <div class="cl-text"><span class="cl-label">Instagram</span><span class="cl-val">@shaurya_mittal56</span></div>
           </a>
         </div>
       </div>
-      <div class="reveal" style="transition-delay:.2s;">
-        <form class="cf liquid-glass-card" id="contactForm">
-          <div class="cf-title">Send Message</div>
-          <div class="fg"><input type="text" id="fname" class="fi" placeholder=" " required><label class="fl" for="fname">Your Name</label></div>
-          <div class="fg"><input type="email" id="femail" class="fi" placeholder=" " required><label class="fl" for="femail">Your Email</label></div>
-          <div class="fg ta"><textarea id="fmsg" class="ft" rows="5" placeholder=" " required></textarea><label class="fl" for="fmsg">Your Message</label></div>
-          <button type="submit" class="btn-g" style="width:100%;justify-content:center;">Send Message ✦</button>
-          <div class="cf-ok" id="cfOk">Thank you! Message sent successfully.</div>
-        </form>
-      </div>
+      <form class="cf liquid-glass-card" id="contact-form" onsubmit="event.preventDefault(); document.getElementById('cf-ok').style.display='block'; this.reset();">
+        <h3 class="cf-title">Send a Message</h3>
+        <div class="fg">
+          <input type="text" class="fi" id="fn" placeholder=" " required>
+          <label class="fl" for="fn">Your Name</label>
+        </div>
+        <div class="fg">
+          <input type="email" class="fi" id="fe" placeholder=" " required>
+          <label class="fl" for="fe">Your Email</label>
+        </div>
+        <div class="fg ta">
+          <textarea class="ft" id="fm" rows="4" placeholder=" " required></textarea>
+          <label class="fl" for="fm">Your Message</label>
+        </div>
+        <button type="submit" class="btn-g" style="width:100%;">Send Message ✦</button>
+        <div class="cf-ok" id="cf-ok">Thank you! Your message has been sent.</div>
+      </form>
     </div>
   </div>
 </section>
-
-<!-- ━━━ FOOTER & LIVING SIGNATURE ━━━ -->
+<!-- 🎖 FOOTER & LIVING SIGNATURE -->
 <footer>
   <div class="ft-g">
     <div>
       <div class="ft-brand">Shaurya Mittal</div>
-      <div class="ft-desc">Student, Web Developer, and AI Enthusiast building innovative digital tools from Lucknow, India.</div>
-      <div class="ft-signature-wrap">
-        <svg class="ft-signature-svg" viewBox="0 0 200 50">
-          <path d="M 10 35 Q 30 10 50 35 T 80 35 T 110 20 Q 140 45 170 15" fill="none" stroke="var(--gold)" stroke-width="2" />
-        </svg>
-      </div>
+      <p class="ft-desc">Student, Web Developer, and AI Enthusiast building modern digital experiences in Lucknow, India.</p>
       <div class="ft-socs">
-        <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="ft-soc" aria-label="GitHub">
-          <svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        </a>
-        <a href="https://www.linkedin.com/in/shaurya-mittal-487b17374?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="ft-soc" aria-label="LinkedIn">
-          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        </a>
-        <a href="https://www.instagram.com/shaurya_mittal56?igsh=bTJjZDFtN2JuYmw2" target="_blank" rel="noopener noreferrer" class="ft-soc" aria-label="Instagram">
-          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-        </a>
+        <a href="https://github.com/shaurya1233" target="_blank" rel="noopener noreferrer" class="ft-soc" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg></a>
+        <a href="https://www.linkedin.com/in/shaurya-mittal-487b17374" target="_blank" rel="noopener noreferrer" class="ft-soc" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+        <a href="https://www.instagram.com/shaurya_mittal56" target="_blank" rel="noopener noreferrer" class="ft-soc" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg></a>
       </div>
     </div>
     <div>
@@ -1321,551 +1146,191 @@ footer{background:#060100;border-top:1px solid rgba(201,168,76,.08);padding:4rem
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#experience">Journey</a></li>
-        <li><a href="#certifications">Certificates</a></li>
       </ul>
     </div>
     <div>
-      <div class="ft-col-h">Projects</div>
+      <div class="ft-col-h">Connect</div>
       <ul class="ft-links">
-        <li><a href="https://shaurya1233.github.io/BharatRakshakPvtROBO.1/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnsCR3EGiyB_BY1tBpYmpYdo2Zk9jsv6uFwWUbNKA5iiDqtfGw1wjGsxHnpao_aem_g1WszkXciBHAL92Rn7Hq1w" target="_blank" rel="noopener noreferrer">Shaurya AI Assistant</a></li>
-        <li><a href="https://shaurya79878.github.io/-ShauryaSentinel/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGn5_JBILPKgskZYXZqNSfB6a4t51kan9cc2cSzY_yuER2r1gXwde5Zo3gfISM_aem_70Mp6i7Ez4yZk8ipBBF8vg" target="_blank" rel="noopener noreferrer">Shaurya Security</a></li>
-        <li><a href="https://shaurya79878.github.io/SafeIndia.github.io/?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnoaDozyoAzVoWcjlBwhOBC0iSQ7sHfQv5nkGbBRjZPjRtx8kS--wY2YRrqBA_aem_FjnZ8z3HJXWgR47ygM7oZg&utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank" rel="noopener noreferrer">Safe Indian Helpline</a></li>
-        <li><a href="https://shaurya79878.github.io/BharatRakshak3.0/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnQ2OA-HPiuqp5TJwLuDI71FksOkm3VonbHcURhTpu9PeKyy2zUjtzDr3V9Hc_aem_bOrzYyAqNpHKNkYeaMu-QQ" target="_blank" rel="noopener noreferrer">Bharat Rakshak 3.0</a></li>
+        <li><a href="#github">GitHub</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </div>
   <div class="ft-bot">
-    <div class="ft-copy">© 2026 Shaurya Mittal. Built with passion &amp; precision in Lucknow, India.</div>
-    <div class="version-badge">v4.0 Ultra Luxury Edition</div>
-    <a href="#hero" class="btt">↑ Top</a>
+    <div class="ft-copy">© 2026 Shaurya Mittal. All rights reserved.</div>
+    <span class="version-badge">v3.0 Masterpiece</span>
+    <a href="#hero" class="btt">Back to Top ↑</a>
   </div>
 </footer>
 
-<!-- ━━━ JAVASCRIPT MASTER ENGINE ━━━ -->
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // 1. LOADER DUST & LOADER FADE OUT
-  const loaderCanvas = document.getElementById('loader-canvas');
-  if (loaderCanvas) {
-    const lCtx = loaderCanvas.getContext('2d');
-    let lParticles = [];
-    function resizeLoaderCanvas() {
-      loaderCanvas.width = window.innerWidth;
-      loaderCanvas.height = window.innerHeight;
-    }
-    resizeLoaderCanvas();
-    window.addEventListener('resize', resizeLoaderCanvas);
-
-    for (let i = 0; i < 40; i++) {
-      lParticles.push({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        r: Math.random() * 2 + 0.5,
-        s: Math.random() * 0.5 + 0.2,
-        a: Math.random()
-      });
-    }
-
-    function renderLoaderParticles() {
-      lCtx.clearRect(0, 0, loaderCanvas.width, loaderCanvas.height);
-      lCtx.fillStyle = '#c9a84c';
-      lParticles.forEach(p => {
-        p.y -= p.s;
-        if (p.y < 0) p.y = loaderCanvas.height;
-        lCtx.globalAlpha = p.a;
-        lCtx.beginPath();
-        lCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        lCtx.fill();
-      });
-      if (!document.getElementById('loader').classList.contains('out')) {
-        requestAnimationFrame(renderLoaderParticles);
-      }
-    }
-    renderLoaderParticles();
-  }
-
-  // Hide loader after loading sequence
-  setTimeout(() => {
-    const loader = document.getElementById('loader');
-    if (loader) loader.classList.add('out');
-    triggerSatelliteArrivalSequence();
-  }, 2200);
-
-  // 2. SATELLITE ARRIVAL SEQUENCE (First Visit / Triggered)
-  function triggerSatelliteArrivalSequence() {
-    if (sessionStorage.getItem('satArrivalDone')) return;
-    sessionStorage.setItem('satArrivalDone', '1');
-
-    const satOverlay = document.getElementById('sat-arrival');
-    const satText = document.getElementById('sat-text');
-    if (!satOverlay || !satText) return;
-
-    satOverlay.classList.add('active');
-    const stages = [
-      "DEEP SPACE SCAN...",
-      "APPROACHING EARTH...",
-      "TARGETING ASIA / INDIA...",
-      "LOCATING LUCKNOW, U.P....",
-      "WELCOME TO SHAURYA'S PORTFOLIO"
-    ];
-    let idx = 0;
-    const interval = setInterval(() => {
-      idx++;
-      if (idx < stages.length) {
-        satText.innerText = stages[idx];
-      } else {
-        clearInterval(interval);
-        setTimeout(() => {
-          satOverlay.classList.remove('active');
-        }, 800);
-      }
-    }, 700);
-  }
-
-  // 3. CURSOR ENGINE
-  const cur = document.getElementById('cur');
-  const ring = document.getElementById('cur-ring');
-  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
-
-  if (matchMedia('(pointer:fine)').matches) {
-    document.body.classList.add('has-mouse');
-    window.addEventListener('mousemove', e => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      if (cur) {
-        cur.style.left = mouseX + 'px';
-        cur.style.top = mouseY + 'px';
-      }
-    });
-
-    function renderCursorRing() {
-      ringX += (mouseX - ringX) * 0.15;
-      ringY += (mouseY - ringY) * 0.15;
-      if (ring) {
-        ring.style.left = ringX + 'px';
-        ring.style.top = ringY + 'px';
-      }
-      requestAnimationFrame(renderCursorRing);
-    }
-    renderCursorRing();
-  }
-
-  // 4. SCROLL PROGRESS BAR & NAVBAR SCROLL
-  const prog = document.getElementById('prog');
-  const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    const total = document.documentElement.scrollHeight - window.innerHeight;
-    const current = window.scrollY;
-    if (prog) prog.style.width = (current / total * 100) + '%';
-    if (nav) {
-      if (current > 50) nav.classList.add('scrolled');
-      else nav.classList.remove('scrolled');
-    }
-    updatePlanetNavOnScroll();
-  });
-
-  // 5. THEME TOGGLE & BLUEPRINT MODE TOGGLE
-  const themeBtn = document.getElementById('themeBtn');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', () => {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', nextTheme);
-      themeBtn.innerText = nextTheme === 'light' ? '🌙' : '☀';
-    });
-  }
-
-  const bpToggleBtn = document.getElementById('bpToggleBtn');
-  const btnBlueprintHUD = document.getElementById('btn-blueprint');
-  function toggleBlueprintMode() {
-    document.body.classList.toggle('blueprint-mode');
-    const isBP = document.body.classList.contains('blueprint-mode');
-    showToast(isBP ? "🏗 Architectural Blueprint Mode Enabled" : "✨ Luxury Theme Restored");
-  }
-  if (bpToggleBtn) bpToggleBtn.addEventListener('click', toggleBlueprintMode);
-  if (btnBlueprintHUD) btnBlueprintHUD.addEventListener('click', toggleBlueprintMode);
-
-  // 6. HERO TYPING EFFECT
-  const phrases = [
-    "Building modern digital experiences.",
-    "Crafting clean, responsive code.",
-    "Integrating AI with web architecture.",
-    "Designing user-centric solutions."
-  ];
-  let pIdx = 0, charIdx = 0, isDeleting = false;
-  const ttext = document.getElementById('ttext');
-
-  function typeLoop() {
-    if (!ttext) return;
-    const currentPhrase = phrases[pIdx];
-    if (isDeleting) {
-      charIdx--;
-      ttext.textContent = currentPhrase.substring(0, charIdx);
-    } else {
-      charIdx++;
-      ttext.textContent = currentPhrase.substring(0, charIdx);
-    }
-
-    let delay = isDeleting ? 40 : 80;
-    if (!isDeleting && charIdx === currentPhrase.length) {
-      delay = 2000;
-      isDeleting = true;
-    } else if (isDeleting && charIdx === 0) {
-      isDeleting = false;
-      pIdx = (pIdx + 1) % phrases.length;
-      delay = 500;
-    }
-    setTimeout(typeLoop, delay);
-  }
-  typeLoop();
-
-  // 7. PARTICLE BACKGROUND CANVAS (INFINITE SPACE & LIVING ATMOSPHERE)
-  const pcv = document.getElementById('pcv');
-  if (pcv) {
-    const ctx = pcv.getContext('2d');
-    let particles = [];
-    let particleCount = 60;
-
-    function resizePCV() {
-      pcv.width = window.innerWidth;
-      pcv.height = window.innerHeight;
-    }
-    resizePCV();
-    window.addEventListener('resize', resizePCV);
-
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 2 + 0.5,
-        alpha: Math.random() * 0.7 + 0.3
-      });
-    }
-
-    function animateParticles() {
-      ctx.clearRect(0, 0, pcv.width, pcv.height);
-      const isBP = document.body.classList.contains('blueprint-mode');
-      ctx.fillStyle = isBP ? '#00f0ff' : '#c9a84c';
-
-      particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0) p.x = pcv.width;
-        if (p.x > pcv.width) p.x = 0;
-        if (p.y < 0) p.y = pcv.height;
-        if (p.y > pcv.height) p.y = 0;
-
-        ctx.globalAlpha = p.alpha;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fill();
-      });
-      requestAnimationFrame(animateParticles);
-    }
-    animateParticles();
-  }
-
-  // 8. 🧬 3D DIGITAL DNA CANVAS ENGINE
-  const dnaCanvas = document.getElementById('dna-canvas');
-  if (dnaCanvas) {
-    const ctx = dnaCanvas.getContext('2d');
-    let angle = 0;
-    const skillsList = [
-      "HTML5 / CSS3",
-      "JavaScript ES6+",
-      "AI & LLM Tools",
-      "Git & GitHub",
-      "ASP.NET Core",
-      "Responsive UX"
-    ];
-
-    function resizeDNA() {
-      dnaCanvas.width = dnaCanvas.parentElement.clientWidth;
-      dnaCanvas.height = dnaCanvas.parentElement.clientHeight || 260;
-    }
-    resizeDNA();
-    window.addEventListener('resize', resizeDNA);
-
-    function renderDNA() {
-      ctx.clearRect(0, 0, dnaCanvas.width, dnaCanvas.height);
-      const centerX = dnaCanvas.width / 2;
-      const centerY = dnaCanvas.height / 2;
-      const radius = 70;
-      const nodes = 14;
-      const isBP = document.body.classList.contains('blueprint-mode');
-      const strandColor = isBP ? '#00f0ff' : '#c9a84c';
-
-      angle += 0.02;
-
-      for (let i = 0; i < nodes; i++) {
-        const y = (i - nodes / 2) * 16 + centerY;
-        const offset = i * 0.4 + angle;
-        const x1 = centerX + Math.sin(offset) * radius;
-        const x2 = centerX - Math.sin(offset) * radius;
-
-        ctx.strokeStyle = 'rgba(201,168,76,0.25)';
-        ctx.lineWidth = 1;
-        ctx.beginPath();
-        ctx.moveTo(x1, y);
-        ctx.lineTo(x2, y);
-        ctx.stroke();
-
-        // Node 1
-        ctx.fillStyle = strandColor;
-        ctx.beginPath();
-        ctx.arc(x1, y, 4, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Node 2
-        ctx.fillStyle = isBP ? '#70f8ff' : '#e8d5a3';
-        ctx.beginPath();
-        ctx.arc(x2, y, 4, 0, Math.PI * 2);
-        ctx.fill();
-      }
-      requestAnimationFrame(renderDNA);
-    }
-    renderDNA();
-  }
-
-  // 9. REVEAL ON SCROLL & COUNTERS
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('vis');
-        // Trigger skill bars animation
-        const fills = entry.target.querySelectorAll('.sk-fill');
-        fills.forEach(f => f.classList.add('anim'));
-
-        // Trigger power meters
-        const pmFills = entry.target.querySelectorAll('.pm-bar-fill');
-        pmFills.forEach(pm => pm.style.width = pm.style.getPropertyValue('--w'));
-
-        // Trigger counters
-        const counts = entry.target.querySelectorAll('[data-count]');
-        counts.forEach(c => {
-          if (c.dataset.done) return;
-          c.dataset.done = '1';
-          const target = parseInt(c.dataset.count);
-          let curr = 0;
-          const inc = Math.max(1, Math.floor(target / 25));
-          const timer = setInterval(() => {
-            curr += inc;
-            if (curr >= target) {
-              c.textContent = target;
-              clearInterval(timer);
-            } else {
-              c.textContent = curr;
-            }
-          }, 40);
-        });
-      }
-    });
-  }, { threshold: 0.15 });
-
-  reveals.forEach(r => observer.observe(r));
-
-  // 10. PROJECT FILTERS
-  const fBtns = document.querySelectorAll('.f-btn');
-  const projCards = document.querySelectorAll('.pc');
-  fBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      fBtns.forEach(b => b.classList.remove('on'));
-      btn.classList.add('on');
-      const filter = btn.dataset.f;
-
-      projCards.forEach(card => {
-        if (filter === 'all' || card.dataset.cat.includes(filter)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-
-  // 11. GITHUB HEATMAP GENERATOR
-  const hm = document.getElementById('hm');
-  if (hm) {
-    for (let i = 0; i < 364; i++) {
-      const cell = document.createElement('div');
-      const lvl = Math.floor(Math.random() * 5);
-      cell.className = `hm-c hm-${lvl}`;
-      hm.appendChild(cell);
-    }
-  }
-
-  // 12. 🔥 LIVE BUILD SIMULATOR TRIGGER
-  const buildModal = document.getElementById('build-modal');
-  const bmCloseBtn = document.getElementById('bm-close-btn');
-  const liveBuildBtns = document.querySelectorAll('.trigger-live-build');
-
-  liveBuildBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      if (!buildModal) return;
-      buildModal.classList.add('active');
-      const steps = [
-        document.getElementById('bs-1'),
-        document.getElementById('bs-2'),
-        document.getElementById('bs-3'),
-        document.getElementById('bs-4')
-      ];
-
-      steps.forEach(s => { if(s) s.className = 'bm-step'; });
-
-      steps.forEach((st, i) => {
-        setTimeout(() => {
-          if (st) st.className = 'bm-step active';
-        }, (i + 1) * 600);
-      });
-
-      setTimeout(() => {
-        steps.forEach(st => { if(st) st.className = 'bm-step done'; });
-        showToast("⚡ Project Live Build Complete!");
-      }, 3000);
-    });
-  });
-
-  if (bmCloseBtn) {
-    bmCloseBtn.addEventListener('click', () => {
-      if (buildModal) buildModal.classList.remove('active');
-    });
-  }
-
-  // 13. 🌍 PLANET NAVIGATION BAR INTERACTION
-  const planetNodes = document.querySelectorAll('.planet-node');
-  planetNodes.forEach(node => {
-    node.addEventListener('click', () => {
-      const targetId = node.dataset.target;
-      const targetSec = document.querySelector(targetId);
-      if (targetSec) targetSec.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-
-  function updatePlanetNavOnScroll() {
-    const sections = document.querySelectorAll('section');
-    let currentId = '#hero';
-    sections.forEach(sec => {
-      const top = sec.offsetTop - 200;
-      if (window.scrollY >= top) {
-        currentId = '#' + sec.id;
-      }
-    });
-
-    planetNodes.forEach(node => {
-      if (node.dataset.target === currentId) {
-        node.classList.add('active');
-      } else {
-        node.classList.remove('active');
-      }
-    });
-  }
-
-  // 14. 🧩 SECRET DEVELOPER HUD (Press ~ or click logo 3 times)
-  const devHUD = document.getElementById('dev-hud');
-  const logoTrigger = document.getElementById('logo-trigger');
-  let logoClicks = 0;
-
-  if (logoTrigger) {
-    logoTrigger.addEventListener('click', (e) => {
-      logoClicks++;
-      if (logoClicks >= 3) {
-        e.preventDefault();
-        logoClicks = 0;
-        if (devHUD) devHUD.classList.toggle('active');
-        showToast("🛠 Secret Developer HUD Unlocked!");
-      }
-    });
-  }
-
-  window.addEventListener('keydown', e => {
-    if (e.key === '`' || e.key === '~') {
-      if (devHUD) devHUD.classList.toggle('active');
-      showToast("🛠 Secret Developer HUD Toggled");
-    } else if (e.key === 'Escape') {
-      if (devHUD) devHUD.classList.remove('active');
-      if (buildModal) buildModal.classList.remove('active');
-    }
-  });
-
-  const btnSatReplay = document.getElementById('btn-sat-replay');
-  if (btnSatReplay) {
-    btnSatReplay.addEventListener('click', () => {
-      sessionStorage.removeItem('satArrivalDone');
-      triggerSatelliteArrivalSequence();
-    });
-  }
-
-  const btnScanTrigger = document.getElementById('btn-scan-trigger');
-  if (btnScanTrigger) {
-    btnScanTrigger.addEventListener('click', () => {
-      const scannerLine = document.getElementById('skill-scanner-line');
-      if (scannerLine) {
-        scannerLine.style.display = 'block';
-        showToast("💠 Holographic Skill Scan Running...");
-        setTimeout(() => {
-          scannerLine.style.display = 'none';
-        }, 4000);
-      }
-    });
-  }
-
-  // 15. TOAST NOTIFICATION ENGINE & COPY EMAIL
-  function showToast(msg) {
-    const toast = document.getElementById('toast-notif');
-    if (!toast) return;
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 3000);
-  }
-
-  const copyEmailBtns = document.querySelectorAll('.copy-email-btn');
-  copyEmailBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      navigator.clipboard.writeText('mittalshaurya66@gmail.com').then(() => {
-        showToast("✉ Email copied to clipboard: mittalshaurya66@gmail.com");
-      });
-    });
-  });
-
-  // 16. CONTACT FORM SUBMISSION
-  const contactForm = document.getElementById('contactForm');
-  const cfOk = document.getElementById('cfOk');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (cfOk) {
-        cfOk.style.display = 'block';
-        contactForm.reset();
-        showToast("✉ Message sent successfully!");
-      }
-    });
-  }
-
-  // 17. MOBILE MENU TOGGLES
-  const hambBtn = document.getElementById('hambBtn');
-  const mobMenu = document.getElementById('mobMenu');
-  const mobClose = document.getElementById('mobClose');
-
-  if (hambBtn && mobMenu) {
-    hambBtn.addEventListener('click', () => mobMenu.classList.add('open'));
-  }
-  if (mobClose && mobMenu) {
-    mobClose.addEventListener('click', () => mobMenu.classList.remove('open'));
-  }
-  if (mobMenu) {
-    mobMenu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => mobMenu.classList.remove('open'));
-    });
+// Loader
+window.addEventListener('load', function() {
+  const loader = document.getElementById('loader');
+  if(loader) {
+    setTimeout(function() {
+      loader.classList.add('out');
+    }, 1000);
   }
 });
+
+// Custom Cursor
+const cur = document.getElementById('cur');
+const ring = document.getElementById('cur-ring');
+if(cur && ring) {
+  document.addEventListener('mousemove', function(e) {
+    document.body.classList.add('has-mouse');
+    cur.style.left = e.clientX + 'px';
+    cur.style.top = e.clientY + 'px';
+    ring.style.left = e.clientX + 'px';
+    ring.style.top = e.clientY + 'px';
+  });
+}
+
+// Scroll Progress Bar
+window.addEventListener('scroll', function() {
+  const prog = document.getElementById('prog');
+  if(prog) {
+    const total = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / total) * 100;
+    prog.style.width = progress + '%';
+  }
+});
+
+// Navbar Scroll Background
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', function() {
+  if(navbar) {
+    if(window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  }
+});
+
+// Mobile Navigation Toggle
+const hambBtn = document.getElementById('hambBtn');
+const mobMenu = document.getElementById('mobMenu');
+const mobClose = document.getElementById('mobClose');
+if(hambBtn && mobMenu) {
+  hambBtn.addEventListener('click', function() {
+    mobMenu.classList.add('open');
+  });
+}
+if(mobClose && mobMenu) {
+  mobClose.addEventListener('click', function() {
+    mobMenu.classList.remove('open');
+  });
+}
+if(mobMenu) {
+  mobMenu.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      mobMenu.classList.remove('open');
+    });
+  });
+}
+
+// Typing Effect
+const ttext = document.getElementById('ttext');
+if(ttext) {
+  const roles = ["Student & Web Developer", "AI Enthusiast", "Frontend Developer", "Building Future Tech"];
+  let roleIdx = 0, charIdx = 0, isDeleting = false;
+  function type() {
+    const currentRole = roles[roleIdx];
+    if(isDeleting) {
+      ttext.textContent = currentRole.substring(0, charIdx - 1);
+      charIdx--;
+    } else {
+      ttext.textContent = currentRole.substring(0, charIdx + 1);
+      charIdx++;
+    }
+    let speed = isDeleting ? 40 : 80;
+    if(!isDeleting && charIdx === currentRole.length) {
+      speed = 2000;
+      isDeleting = true;
+    } else if(isDeleting && charIdx === 0) {
+      isDeleting = false;
+      roleIdx = (roleIdx + 1) % roles.length;
+      speed = 500;
+    }
+    setTimeout(type, speed);
+  }
+  type();
+}
+
+// Reveal Animations
+const reveals = document.querySelectorAll('.reveal');
+function checkReveals() {
+  const triggerBottom = window.innerHeight * 0.88;
+  reveals.forEach(function(el) {
+    const top = el.getBoundingClientRect().top;
+    if(top < triggerBottom) {
+      el.classList.add('vis');
+    }
+  });
+}
+window.addEventListener('scroll', checkReveals);
+checkReveals();
+
+// Blueprint Mode Toggle
+const bpToggleBtn = document.getElementById('bpToggleBtn');
+if(bpToggleBtn) {
+  bpToggleBtn.addEventListener('click', function() {
+    document.body.classList.toggle('blueprint-mode');
+  });
+}
+
+// Theme Toggle
+const themeBtn = document.getElementById('themeBtn');
+if(themeBtn) {
+  themeBtn.addEventListener('click', function() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', newTheme);
+    themeBtn.textContent = newTheme === 'dark' ? '☀' : '🌙';
+  });
+}
+
+// Particle Canvas Animation
+const canvas = document.getElementById('pcv');
+if(canvas) {
+  const ctx = canvas.getContext('2d');
+  let width, height, particles = [];
+  function resize() {
+    width = canvas.width = window.innerWidth;
+    height = canvas.height = window.innerHeight;
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  for(let i = 0; i < 40; i++) {
+    particles.push({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 2 + 1,
+      dx: (Math.random() - 0.5) * 0.6,
+      dy: (Math.random() - 0.5) * 0.6
+    });
+  }
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = 'rgba(201,168,76,0.3)';
+    particles.forEach(function(p) {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if(p.x < 0 || p.x > width) p.dx *= -1;
+      if(p.y < 0 || p.y > height) p.dy *= -1;
+    });
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+}
 </script>
 </body>
 </html>
-
